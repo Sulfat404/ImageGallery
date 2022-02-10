@@ -6,41 +6,49 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>imageGalery</title>
 	<link rel="icon" type="image/png" href="./img/camera.png" sizes="32x32">
+	<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-	<header>
-		<div class="container">
-			<div class="header__svg"></div>
-			<div class="header__title">js30#2.2-image-galery</div>
-			<div class="header__placeholder">
-				<input type="text">
+	<div class="wrapper">
+		<header>
+			<div class="container">
+				<div class="header__content">
+					<div class="header__svg"><img src="./img/camera.png" alt="camera"></div>
+					<div class="header__title">js30#2.2-image-galery</div>
+					<div class="header__placeholder">
+						<input class="placeholder__search" type="text" placeholder="Search...">
+					</div>
+				</div>
 			</div>
+		</header>
+		<main>
+			<div class="container">
+				<div class="gallery">
+
+				</div> 
 		</div>
-	</header>
-	<main>
-		<div class="container">
-	   <div class="galery"></div> 
-	   </div>
-	</main>
-	<footer>
-		<div class="container">
-		  <div class="footer__content">
-			<div class="content_copyright">
-			  <ul class="copyright__list">
-				<li class="copyright__item">©</li>
-				<li class="copyright__item">2022</li>
-				<li class="copyright__item">
-				  <a class="github_link" href="https://github.com/Sulfat404">github</a>
-				</li>
-			  </ul>
+		</main>
+		<footer>
+			<div class="container">
+			<div class="footer__content">
+				<div class="content_copyright">
+				<ul class="copyright__list">
+					<li class="copyright__item">©</li>
+					<li class="copyright__item">2022</li>
+					<li class="copyright__item">
+					<a class="github_link" href="https://github.com/Sulfat404">github</a>
+					</li>
+				</ul>
+				</div>
+				<div class="content_rss">
+				<a class="rss_link" href="https://rs.school/js-stage0/">
+					<img height="92" width="102" style="border-radius: 50%; background-color: #BDAE82" src="./img/rs_school_js.svg" alt="logo-js">
+				</a>
+				</div>
 			</div>
-			<div class="content_rss">
-			  <a class="rss_link" href="https://rs.school/js-stage0/">
-				<img height="92" width="102" style="border-radius: 50%; background-color: #BDAE82" src="./img/rs_school_js.svg" alt="logo-js">
-			  </a>
 			</div>
-		  </div>
-		</div>
-	  </footer>
+		</footer>
+	  </div>
+	  <script src="./main.js"></script>
 </body>
 </html>
