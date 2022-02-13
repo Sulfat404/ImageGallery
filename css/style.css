@@ -117,13 +117,23 @@ main {
     width: 100%;
     height: 100%;
     z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-.big-size-photo {
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
+.wrapper-bigPhoto-btn-close {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-big-size-photo {
+    max-width: 1200px;
+    max-height: 830px;
 }
 
 .btn {
@@ -134,32 +144,6 @@ main {
     0 1px 17px rgba(0, 0, 0, 00.651), 
     -1px 0 17px rgba(0, 0, 0, 0.651), 
     0 -1px 17px rgba(0, 0, 0, 0.651);
-}
-
-.btn-prev {
-    position: absolute;
-    top:50%;
-    left: 10%;
-    transform:translate(-50%, -50%);
-}
-
-.btn-next {
-    position: absolute;
-    top:50%;
-    right: 10%;
-    transform:translate(50%, -50%);
-}
-
-.btn-close {
-    position: absolute;
-    bottom: 1vh;
-    left: 50%;
-    transform:translate(-50%, -50%);
-}
-
-.img-big-size-photo {
-    max-width: 1200px;
-    max-height: 1000px;
 }
 
 .d-none {

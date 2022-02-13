@@ -17,7 +17,6 @@ const selectColor = document.querySelector('.select__color');
 let images = [];
 let currentImage = 0;
 
-// let searchQuery = document.querySelector('')
 
 async function getData(query, color) {
     let url = `https://api.unsplash.com/search/photos?query=${query}&page=1&per_page=18&client_id=PV3lCodTX9shtq5ZsjvQnAOH9qzO3GYk_ZC5f3K0zY0`;
@@ -32,16 +31,16 @@ async function getData(query, color) {
 function showKingSizePhoto(imgNum) {
     wrapper.classList.add('blur-10');
     galleryBigBlock.classList.remove('d-none');
-    bigSizePhoto.src = images[imgNum].urls.regular;
-    if (imgNum === 0){
-        btnPrev.classList.add('d-none');
+    // bigSizePhoto.src = images[imgNum].urls.regular;
+    if (imgNum < 0){
+        bigSizePhoto.src = images[images.length + imgNum].urls.regular;
     } else {
-        btnPrev.classList.remove('d-none');
+        bigSizePhoto.src = images[imgNum].urls.regular;
     }
-    if (imgNum === (images.length - 1)){
-        btnNext.classList.add('d-none');
+    if (imgNum > (images.length - 1)){
+        bigSizePhoto.src = images[0].urls.regular;
     } else {
-        btnNext.classList.remove('d-none');
+        bigSizePhoto.src = images[imgNum].urls.regular;
     }
     currentImage = imgNum;
 }
