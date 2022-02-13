@@ -11,6 +11,8 @@ body {
     position: relative;
 
 }
+
+
 li {
     list-style: none;
 }
@@ -133,7 +135,7 @@ main {
 
 .img-big-size-photo {
     max-width: 1200px;
-    max-height: 830px;
+    max-height: 650px;
 }
 
 .btn {

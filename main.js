@@ -14,6 +14,9 @@ const bigSizePhoto = document.querySelector('.img-big-size-photo');
 
 const selectColor = document.querySelector('.select__color');
 
+const spinner = document.querySelector('.spinner');
+
+let imagesSpinnerTimeout;
 let images = [];
 let currentImage = 0;
 
@@ -31,17 +34,18 @@ async function getData(query, color) {
 function showKingSizePhoto(imgNum) {
     wrapper.classList.add('blur-10');
     galleryBigBlock.classList.remove('d-none');
-    // bigSizePhoto.src = images[imgNum].urls.regular;
+    
     if (imgNum < 0){
-        bigSizePhoto.src = images[images.length + imgNum].urls.regular;
-    } else {
-        bigSizePhoto.src = images[imgNum].urls.regular;
+        imgNum = (images.length - 1);
     }
     if (imgNum > (images.length - 1)){
-        bigSizePhoto.src = images[0].urls.regular;
-    } else {
-        bigSizePhoto.src = images[imgNum].urls.regular;
+        imgNum = 0; 
     }
+
+    imagesSpinnerTimeout = setTimeout(() => {
+        spinnerOn();
+    }, 500);
+    bigSizePhoto.src = images[imgNum].urls.regular;
     currentImage = imgNum;
 }
 
@@ -71,6 +75,16 @@ function searchFilter() {
     }
 }
 
+function spinnerOn() {
+    bigSizePhoto.classList.add('d-none');
+    spinner.classList.remove('d-none');
+}
+
+function spinnerOff() {
+    bigSizePhoto.classList.remove('d-none');
+    spinner.classList.add('d-none');
+}
+
 icon.addEventListener('click', searchFilter);
 
 input.addEventListener('keydown', (e) => {
@@ -91,3 +105,8 @@ btnClose.addEventListener('click', () => {
     wrapper.classList.remove('blur-10');
     galleryBigBlock.classList.add('d-none');
 });
+
+bigSizePhoto.onload = () => {
+    spinnerOff();
+    clearTimeout(imagesSpinnerTimeout);
+};
