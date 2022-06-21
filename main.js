@@ -1,3 +1,10 @@
+console.log(`total score: 65
+done all requirements besides 'в поле ввода есть крестик при клике по которому поисковый запрос из поля ввода удаляется и отображается placeholder'
+additional functionality:
+1. When you click on the picture, you can see the full image + switching is implemented
+2. When the photo is loaded for a long time, a spinner.gif appears
+3. Implemented filter by color`)
+
 getData("spring", "");
 
 // search

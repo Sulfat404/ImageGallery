@@ -139,6 +139,7 @@ main {
 }
 
 .btn {
+    padding: 30px;
     font-size: 80px;
     color: #BDAE82;
     cursor: pointer;
@@ -146,6 +147,11 @@ main {
     0 1px 17px rgba(0, 0, 0, 00.651), 
     -1px 0 17px rgba(0, 0, 0, 0.651), 
     0 -1px 17px rgba(0, 0, 0, 0.651);
+}
+
+.btn.btn-close {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .d-none {
