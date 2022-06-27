@@ -24,9 +24,9 @@ let currentImage = 0;
 
 let data;
 
-// btnShowMore.addEventListener("click", function() {
-//   addImages(data);
-// });
+btnShowMore.addEventListener("click", function() {
+  addImages(data);
+});
 
 
 async function getData(query, color) {
@@ -66,7 +66,6 @@ function showData(data) {
   }
 
   let countOfImg = 0;
-
   images = data.results;
   for (let item of data.results) {
     const img = `<img class='gallery__img' src=${item.urls.small} alt='image'>`;
@@ -78,17 +77,26 @@ function showData(data) {
     }
   }
 
-  
   let imgElements = document.querySelectorAll(".gallery__img");
   for (let [i, imgElement] of imgElements.entries()) {
     imgElement.addEventListener("click", () => showKingSizePhoto(i));
   }
 }
 
+
 function addImages(data) {
   let gallery = document.querySelector(".gallery");
   let imgs = document.querySelectorAll(".gallery__img");
-  for (let item of dataAdded.results) {
+  let lastImg = imgs[imgs.length-1];
+
+  data.results.ForEach((item) => {
+    if(item.urls.small === lastImg.src) {
+      let firstAddedImg = item;
+    }
+  })
+    console.log(data.results[5].urls.small)
+
+  for (let item of imgs) {
     const img = `<img class='gallery__img' src=${item.urls.small} alt='image'>`;
     gallery.insertAdjacentHTML("beforeend", img);
     if (countOfImg === 5) {
