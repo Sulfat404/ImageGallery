@@ -87,23 +87,15 @@ function showData(data) {
 function addImages(data) {
   let gallery = document.querySelector(".gallery");
   let imgs = document.querySelectorAll(".gallery__img");
-  let lastImg = imgs[imgs.length-1];
-
-  data.results.ForEach((item) => {
-    if(item.urls.small === lastImg.src) {
-      let firstAddedImg = item;
-    }
-  })
-    console.log(data.results[5].urls.small)
-
-  for (let item of imgs) {
-    const img = `<img class='gallery__img' src=${item.urls.small} alt='image'>`;
+  let lengthOfGallary = imgs.length-1;
+  if(data.results.length === lengthOfGallary+1) {
+    return;
+  }
+  let i = 1;
+  while (i != 4) {
+    const img = `<img class='gallery__img' src=${data.results[lengthOfGallary+i].urls.small} alt='image'>`;
     gallery.insertAdjacentHTML("beforeend", img);
-    if (countOfImg === 5) {
-      break;
-    } else {
-      countOfImg++;
-    }
+    i++;
   }
 }
 
